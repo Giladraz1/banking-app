@@ -1,0 +1,14 @@
+<div class="main-container">
+  <h2>Welcome, {{ (user$ | async)?.user?.firstName }} {{ (user$ | async)?.user?.lastName }}</h2>
+  <div class="account-dropdown">
+    <label for="account-select">Select Account:</label>
+    <select id="account-select" [(ngModel)]="selectedAccount" name="account-select" (change)="onAccountSelectChange()">
+      <option *ngFor="let account of (user$ | async)?.user?.accounts" [ngValue]="account">{{ account }}</option>
+    </select>
+  </div>
+
+  <div *ngIf="selectedAccountDetails" class="account-details-container">
+    <app-account-details [account]="selectedAccountDetails"></app-account-details>
+  </div>
+</div>
+
