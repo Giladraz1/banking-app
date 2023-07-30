@@ -9,6 +9,9 @@ import { environment } from '../environments/enviroments';
   providedIn: 'root'
 })
 export class AccountService {
+  transferMoney(amount: number, receiverAccountNumber: string, comment: string | undefined) {
+    throw new Error('Method not implemented.');
+  }
   private apiUrl = `${environment.apiBaseUrl}/account`;
 
   constructor(private http: HttpClient) {}

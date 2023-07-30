@@ -1,0 +1,19 @@
+<h2>Transfer Money</h2>
+<form [formGroup]="transferForm" (ngSubmit)="onTransferMoney()">
+  <div>
+    <label for="amount">How much?</label>
+    <input formControlName="amount" id="amount" type="number" min="1" required>
+  </div>
+
+  <div>
+    <label for="receiver">For who?</label>
+    <input formControlName="receiverAccountNumber" id="receiver" type="text" required>
+  </div>
+
+  <div>
+    <label for="comment">Comment</label>
+    <input formControlName="comment" id="comment" type="text">
+  </div>
+
+  <button type="submit">Transfer</button>
+</form>

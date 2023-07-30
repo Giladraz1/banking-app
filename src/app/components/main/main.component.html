@@ -10,5 +10,10 @@
   <div *ngIf="selectedAccountDetails" class="account-details-container">
     <app-account-details [account]="selectedAccountDetails"></app-account-details>
   </div>
-</div>
 
+  <!-- Display transfer success and error messages -->
+<div *ngIf="transferSuccess" class="transfer-success">{{ transferSuccess }}</div>
+<div *ngIf="transferError" class="transfer-error">{{ transferError }}</div>
+
+  <app-transfer-money></app-transfer-money>
+</div>
